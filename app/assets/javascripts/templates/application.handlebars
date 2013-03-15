@@ -1,0 +1,28 @@
+<div class="navbar navbar-fluid-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <div class="brand">
+      {{#linkTo "index"}}Home{{/linkTo}}
+      </div>
+      <div class="container-fluid nav-collapse">
+        <ul class="nav">
+          <li>{{#linkTo "posts"}}Posts{{/linkTo}}</li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+
+<div id="content">
+  {{outlet}}
+</div>
+
+<footer>
+  <p>&copy; Our App 2013</p>
+</footer>

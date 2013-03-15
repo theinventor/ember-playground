@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="nav-header">Posts</li>
+          {{#each post in controller}}
+          <li>{{#linkTo 'post' post}}{{post.title}}{{/linkTo}}</li>
+          {{else}}
+          <li>There are no posts.</li>
+          {{/each}}
+        </ul>
+      </div><!--/.well -->
+    </div><!--/span-->
+
+    {{outlet}}
+
+  </div><!--/row-->
+</div> <!-- /container -->
+
+
+
