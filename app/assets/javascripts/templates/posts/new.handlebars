@@ -1,0 +1,15 @@
+<div class="span9">
+  <div class="foo" style="padding:20px;">
+    <form {{action save on="submit"}} class="form-horizontal">
+    <legend>Create Post</legend>
+
+    {{partial "post_edit_fields"}}
+
+    <div class="form-actions">
+      {{submitButton "Create"}}
+      <button class="btn" {{action cancel}}>Cancel</button>
+    </div>
+    </form>
+
+  </div>
+</div>
