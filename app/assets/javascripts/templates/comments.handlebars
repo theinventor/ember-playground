@@ -1,0 +1,9 @@
+<h5>Comments</h5>
+
+{{#each comment in controller}}
+<li>{{comment.body}}</li>
+{{else}}
+<li>There are no comments.</li>
+{{/each}}
+
+{{outlet}}

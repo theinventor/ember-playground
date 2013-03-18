@@ -16,3 +16,5 @@ Post.create(
     title: "Troy's post",
     body: 'Im hanging out this sunday'
 )
+
+Comment.create post_id: 1, body: "What a great thingy! OMG! LOL!!"

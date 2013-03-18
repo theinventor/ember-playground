@@ -1,4 +1,7 @@
 Embertestanurag::Application.routes.draw do
+  resources :comments
+
+
   resources :posts do
     collection do
       get 'main'
@@ -8,6 +11,7 @@ Embertestanurag::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :posts
+      resources :comments
     end
   end
 
