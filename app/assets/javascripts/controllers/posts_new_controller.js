@@ -4,9 +4,31 @@ Embertestanurag.PostsNewController = Ember.ObjectController.extend({
         this.transaction.commit();
         this.transaction = null;
     },
+
     startEditing: function() {
         // create a new record on a local transaction
         this.transaction = this.get('store').transaction();
         this.set('content', this.transaction.createRecord(Embertestanurag.Post, {}));
+    },
+
+    stopEditing: function() {
+        // rollback the local transaction if it hasn't already been cleared
+        if (this.transaction) {
+            this.transaction.rollback();
+            this.transaction = null;
+        }
+    },
+
+    transitionAfterSave: function() {
+        // when creating new records, it's necessary to wait for the record to be assigned
+        // an id before we can transition to its route (which depends on its id)
+        if (this.get('content.id')) {
+            this.transitionToRoute('post', this.get('content'));
+        }
+    }.observes('content.id'),
+
+    cancel: function() {
+        this.stopEditing();
+        this.transitionToRoute('posts.index');
     }
 });
