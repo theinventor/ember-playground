@@ -4,3 +4,7 @@ Embertestanurag.Store = DS.Store.extend({
     namespace: 'api/v1'
    })
 });
+
+DS.RESTAdapter.map('Embertestanurag.Post', {
+    comments: { embedded: 'always'}
+});
