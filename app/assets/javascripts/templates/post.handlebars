@@ -3,16 +3,17 @@
     <h1>{{title}}</h1>
 
     <p>{{body}}</p>
-
-    <hr>
-    <h5>Comments</h5>
-    <ul>
-      {{#each comments}}
-        <li>{{body}}</li>
-      {{else}}
-      No Comments
-      {{/each}}
-    </ul>
+    {{#if comments}}
+        <hr>
+        <h5>Comments</h5>
+        <ul>
+          {{#each comments}}
+            <li>{{body}}</li>
+          {{else}}
+            No Comments
+          {{/each}}
+        </ul>
+    {{/if}}
     <p>{{#linkTo "comments.new"}}Make Comment{{/linkTo}}</p>
 
     {{outlet}}
