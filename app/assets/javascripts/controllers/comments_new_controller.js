@@ -12,6 +12,7 @@ Embertestanurag.CommentsNewController = Ember.ObjectController.extend({
 //        These are attempts at getting the object to build as a child instead of a standalone
 //        this.set('content', this.get('content.comments').transaction.createRecord());
 //        this.get('content.comments').createRecord();
+        this.controllerFor('post').get('comments').addObject(this.get('content'));
         this.content.set('postId',this.controllerFor('post').get('id'));
     },
 
@@ -27,7 +28,6 @@ Embertestanurag.CommentsNewController = Ember.ObjectController.extend({
         // when creating new records, it's necessary to wait for the record to be assigned
         // an id before we can transition to its route (which depends on its id)
         if (this.get('content.id')) {
-            alert(this.get('content'))
             this.transitionToRoute('post');
         }
     }.observes('content.id'),
