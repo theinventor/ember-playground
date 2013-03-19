@@ -4,12 +4,16 @@
 
     <p>{{body}}</p>
 
-    {{#linkTo "comments"}}Comments..{{/linkTo}}
-    {{post.comments}}
-    debugger
-    {{#each comment in comments.controller}}
-        foo
-    {{/each}}
+    <!--{{#linkTo "comments"}}Comments..{{/linkTo}}-->
+    <hr>
+    <h5>Comments</h5>
+    <ul>
+      {{#each comments}}
+        <li>{{body}}</li>
+      {{/each}}
+    </ul>
+
+
     {{outlet}}
   </div>
 
