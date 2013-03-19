@@ -10,9 +10,10 @@
     <ul>
       {{#each comments}}
         <li>{{body}}</li>
+      {{else}}
+      No Comments
       {{/each}}
     </ul>
-
 
     {{outlet}}
   </div>
