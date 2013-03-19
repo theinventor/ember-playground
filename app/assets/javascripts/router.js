@@ -2,7 +2,7 @@ Embertestanurag.Router.map(function() {
     this.resource('posts', function() {
         this.route('new');
         this.resource('post', { path: ':post_id' }, function() {
-            this.resource('comments', { path: 'commentsff' });
+            this.resource('comments.new', { path: 'comments/new' });
         });
     });
 });

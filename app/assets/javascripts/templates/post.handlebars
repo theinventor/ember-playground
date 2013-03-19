@@ -4,7 +4,6 @@
 
     <p>{{body}}</p>
 
-    <!--{{#linkTo "comments"}}Comments..{{/linkTo}}-->
     <hr>
     <h5>Comments</h5>
     <ul>
@@ -14,6 +13,7 @@
       No Comments
       {{/each}}
     </ul>
+    <p>{{#linkTo "comments.new"}}Make Comment{{/linkTo}}</p>
 
     {{outlet}}
   </div>

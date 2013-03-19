@@ -14,6 +14,7 @@ class Api::V1::CommentsController < ApplicationController
 
   def create
     puts params
-    binding.pry
+    comment = Comment.create params[:comment]
+    render json: comment, status: :created
   end
 end

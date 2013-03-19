@@ -1,0 +1,8 @@
+<div class="control-group">
+  <label class="control-label" for="title">Body</label>
+  <div class="controls">
+    {{view Ember.TextField valueBinding="body" id="title" placeholder="Comment.." required="true"}}
+    {{view Ember.TextField valueBinding="postId" id="postId" value="1" isVisible=false}}
+  </div>
+</div>
+

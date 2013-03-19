@@ -18,5 +18,11 @@
 //= require ember-data
 //= require_self
 //= require embertestanurag
-Embertestanurag = Ember.Application.create();
+Embertestanurag = Ember.Application.create({
+    LOG_TRANSITIONS: true,
+    LOG_BINDINGS: true,
+    ready: function() {
+        console.log('TEsty ready!');
+    }
+});
 //= require_tree .
